@@ -1,0 +1,16 @@
+# Python / env
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+*.log
+
+# Raw dataset is downloaded by scripts/get_data.py, never committed
+/data/
+
+# Large, regenerable artifacts (the notebooks recreate these locally).
+# The small trained models + results JSON in artifacts/ ARE tracked.
+artifacts/*.npy
+artifacts/tuning/
+artifacts/*.html

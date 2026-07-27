@@ -1,0 +1,206 @@
+{
+  "random_state": 42,
+  "config": {
+    "max_trials": 30,
+    "max_epochs": 30,
+    "early_stopping_patience": 5,
+    "hyperband_factor": 3,
+    "smoke_test": false
+  },
+  "search_runs": {
+    "model_a_random": {
+      "status": "ok",
+      "wall_clock_seconds": 304.2917296886444,
+      "n_trials": 30,
+      "trials_to_best": 19,
+      "best_val_auc": 0.665354311466217,
+      "best_hyperparameters": {
+        "activation": "tanh",
+        "hl1_units": 96,
+        "dropout_1": 0.2,
+        "hl2_units": 112,
+        "dropout_2": 0.30000000000000004,
+        "learning_rate": 0.001,
+        "optimizer": "rmsprop",
+        "batch_size": 128
+      }
+    },
+    "model_a_bayesian": {
+      "status": "ok",
+      "wall_clock_seconds": 398.8706486225128,
+      "n_trials": 30,
+      "trials_to_best": 25,
+      "best_val_auc": 0.6695653796195984,
+      "best_hyperparameters": {
+        "activation": "tanh",
+        "hl1_units": 128,
+        "dropout_1": 0.2,
+        "hl2_units": 64,
+        "dropout_2": 0.4,
+        "learning_rate": 0.001,
+        "optimizer": "adam",
+        "batch_size": 256
+      }
+    },
+    "model_a_hyperband": {
+      "status": "ok",
+      "wall_clock_seconds": 554.4460506439209,
+      "n_trials": 90,
+      "trials_to_best": 52,
+      "best_val_auc": 0.6676788330078125,
+      "best_hyperparameters": {
+        "activation": "relu",
+        "hl1_units": 192,
+        "dropout_1": 0.4,
+        "hl2_units": 16,
+        "dropout_2": 0.30000000000000004,
+        "learning_rate": 0.01,
+        "optimizer": "adam",
+        "batch_size": 512,
+        "tuner/epochs": 30,
+        "tuner/initial_epoch": 10,
+        "tuner/bracket": 3,
+        "tuner/round": 3,
+        "tuner/trial_id": "0047"
+      }
+    },
+    "model_b_random": {
+      "status": "ok",
+      "wall_clock_seconds": 1387.4441895484924,
+      "n_trials": 30,
+      "trials_to_best": 30,
+      "best_val_auc": 0.665587842464447,
+      "best_hyperparameters": {
+        "activation": "tanh",
+        "filters_1": 80,
+        "kernel_1": 2,
+        "spatial_dropout_1": 0.4,
+        "filters_2": 48,
+        "kernel_2": 3,
+        "spatial_dropout_2": 0.2,
+        "dense_units": 32,
+        "dense_dropout": 0.1,
+        "learning_rate": 0.3,
+        "optimizer": "sgd",
+        "batch_size": 128
+      }
+    },
+    "model_b_bayesian": {
+      "status": "ok",
+      "wall_clock_seconds": 1124.1570317745209,
+      "n_trials": 30,
+      "trials_to_best": 24,
+      "best_val_auc": 0.666106641292572,
+      "best_hyperparameters": {
+        "activation": "relu",
+        "filters_1": 96,
+        "kernel_1": 2,
+        "spatial_dropout_1": 0.30000000000000004,
+        "filters_2": 48,
+        "kernel_2": 3,
+        "spatial_dropout_2": 0.4,
+        "dense_units": 160,
+        "dense_dropout": 0.30000000000000004,
+        "learning_rate": 0.001,
+        "optimizer": "rmsprop",
+        "batch_size": 256
+      }
+    },
+    "model_b_hyperband": {
+      "status": "ok",
+      "wall_clock_seconds": 1342.9519000053406,
+      "n_trials": 90,
+      "trials_to_best": 47,
+      "best_val_auc": 0.6659541130065918,
+      "best_hyperparameters": {
+        "activation": "tanh",
+        "filters_1": 16,
+        "kernel_1": 2,
+        "spatial_dropout_1": 0.1,
+        "filters_2": 16,
+        "kernel_2": 3,
+        "spatial_dropout_2": 0.1,
+        "dense_units": 128,
+        "dense_dropout": 0.30000000000000004,
+        "learning_rate": 0.001,
+        "optimizer": "adam",
+        "batch_size": 128,
+        "tuner/epochs": 10,
+        "tuner/initial_epoch": 4,
+        "tuner/bracket": 3,
+        "tuner/round": 2,
+        "tuner/trial_id": "0034"
+      }
+    }
+  },
+  "tuned_vs_untuned": [
+    {
+      "model": "Model A - untuned (Notebook 2)",
+      "roc_auc": 0.6626522810516993,
+      "pr_auc": 0.217352256497572,
+      "minority_f1_at_0.5": 0.007905138339920948,
+      "minority_f1_at_tuned_thr": 0.27548526240115023,
+      "selected_threshold": 0.15318156778812408
+    },
+    {
+      "model": "Model A - tuned",
+      "roc_auc": 0.6634567295445547,
+      "pr_auc": 0.21822061010874896,
+      "minority_f1_at_0.5": 0.003524229074889868,
+      "minority_f1_at_tuned_thr": 0.27361275088547815,
+      "selected_threshold": 0.12204559892416
+    },
+    {
+      "model": "Model B - untuned (Notebook 2)",
+      "roc_auc": 0.6635252573356616,
+      "pr_auc": 0.21545573888273656,
+      "minority_f1_at_0.5": 0.005272407732864675,
+      "minority_f1_at_tuned_thr": 0.28146969094044305,
+      "selected_threshold": 0.14328716695308685
+    },
+    {
+      "model": "Model B - tuned",
+      "roc_auc": 0.6597365239471243,
+      "pr_auc": 0.21278540952021974,
+      "minority_f1_at_0.5": 0.0008818342151675485,
+      "minority_f1_at_tuned_thr": 0.2784184514003295,
+      "selected_threshold": 0.13411088287830353
+    }
+  ],
+  "retrain": {
+    "model_a": {
+      "best_strategy": "bayesian",
+      "best_hyperparameters": {
+        "activation": "tanh",
+        "hl1_units": 128,
+        "dropout_1": 0.2,
+        "hl2_units": 64,
+        "dropout_2": 0.4,
+        "learning_rate": 0.001,
+        "optimizer": "adam",
+        "batch_size": 256
+      }
+    },
+    "model_b": {
+      "best_strategy": "bayesian",
+      "best_hyperparameters": {
+        "activation": "relu",
+        "filters_1": 96,
+        "kernel_1": 2,
+        "spatial_dropout_1": 0.30000000000000004,
+        "filters_2": 48,
+        "kernel_2": 3,
+        "spatial_dropout_2": 0.4,
+        "dense_units": 160,
+        "dense_dropout": 0.30000000000000004,
+        "learning_rate": 0.001,
+        "optimizer": "rmsprop",
+        "batch_size": 256
+      }
+    }
+  },
+  "lr_range_test": {
+    "model_a_elbow_lr": 1.2676644018938532e-06,
+    "model_b_elbow_lr": 0.00012185319064883515
+  }
+}

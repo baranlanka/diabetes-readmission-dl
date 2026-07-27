@@ -1,0 +1,6 @@
+{
+  "weight_on_model_a": 0.8,
+  "weight_on_model_b": 0.19999999999999996,
+  "selected_on": "validation PR-AUC",
+  "seed": 42
+}

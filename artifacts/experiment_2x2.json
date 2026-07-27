@@ -1,0 +1,87 @@
+{
+  "random_state": 42,
+  "cells": {
+    "(a) grouped + in-fold SMOTE": {
+      "roc_auc": 0.5805711362148742,
+      "pr_auc": 0.14784537813978085,
+      "minority_f1": 0.17003329633740288,
+      "minority_precision": 0.17082961641391614,
+      "minority_recall": 0.16924436588599204,
+      "accuracy": 0.8117984597573866,
+      "threshold": 0.5,
+      "n_train": 105634.0,
+      "n_test": 19867.0,
+      "test_positive_rate": 0.1139074847737454
+    },
+    "(b) naive + in-fold SMOTE": {
+      "roc_auc": 0.599725502800381,
+      "pr_auc": 0.16052046297393605,
+      "minority_f1": 0.17997750281214847,
+      "minority_precision": 0.18331805682859761,
+      "minority_recall": 0.17675651789659744,
+      "accuracy": 0.8165391584457419,
+      "threshold": 0.5,
+      "n_train": 105632.0,
+      "n_test": 19868.0,
+      "test_positive_rate": 0.11390175156029797
+    },
+    "(c) naive + before-split SMOTE": {
+      "roc_auc": 0.9554150067543974,
+      "pr_auc": 0.961081435568592,
+      "minority_f1": 0.8915828784831945,
+      "minority_precision": 0.9019471083987213,
+      "minority_recall": 0.8814541323487646,
+      "accuracy": 0.8928175854136492,
+      "threshold": 0.5,
+      "n_train": 105630.0,
+      "n_test": 35211.0,
+      "test_positive_rate": 0.4999857998920792
+    },
+    "(c') before-split SMOTE, real test rows only": {
+      "roc_auc": 0.7982623867108888,
+      "pr_auc": 0.356295191693467,
+      "minority_f1": 0.4080482897384306,
+      "minority_precision": 0.37541651240281376,
+      "minority_recall": 0.4468929043631556,
+      "accuracy": 0.8519748427672956,
+      "threshold": 0.5,
+      "n_train": 105630.0,
+      "n_test": 19875.0,
+      "test_positive_rate": 0.11416352201257862
+    },
+    "(d) grouped + before-split SMOTE": {
+      "roc_auc": 0.9538919269385909,
+      "pr_auc": 0.959700607697074,
+      "minority_f1": 0.8875589094168329,
+      "minority_precision": 0.9039458186101296,
+      "minority_recall": 0.8717555517691827,
+      "accuracy": 0.8895609700687227,
+      "threshold": 0.5,
+      "n_train": 105629.0,
+      "n_test": 35214.0,
+      "test_positive_rate": 0.5
+    },
+    "(d') before-split SMOTE (grouped), real test rows only": {
+      "roc_auc": 0.7891959784671179,
+      "pr_auc": 0.3294973344294235,
+      "minority_f1": 0.3787160706591986,
+      "minority_precision": 0.350199203187251,
+      "minority_recall": 0.41228893058161353,
+      "accuracy": 0.8538933076650286,
+      "threshold": 0.5,
+      "n_train": 105629.0,
+      "n_test": 19739.0,
+      "test_positive_rate": 0.10800952429201074
+    }
+  },
+  "decomposition": {
+    "auroc_a": 0.5805711362148742,
+    "auroc_c": 0.9554150067543974,
+    "auroc_c_prime": 0.7982623867108888,
+    "auroc_d": 0.9538919269385909,
+    "auroc_d_prime": 0.7891959784671179,
+    "total_apparent_inflation_auroc": 0.37484387053952317,
+    "component_1_evaluation_population_auroc": 0.1571526200435086,
+    "component_2_genuine_leakage_auroc": 0.21769125049601457
+  }
+}

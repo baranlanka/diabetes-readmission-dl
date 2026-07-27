@@ -1,0 +1,694 @@
+{
+  "seeds": [
+    42,
+    123,
+    2024,
+    7,
+    31415
+  ],
+  "config": {
+    "max_epochs": 100,
+    "early_stopping_patience": 5,
+    "reduce_lr_patience": 2,
+    "model_a_hyperparameters": {
+      "activation": "tanh",
+      "hl1_units": 128,
+      "dropout_1": 0.2,
+      "hl2_units": 64,
+      "dropout_2": 0.4,
+      "learning_rate": 0.001,
+      "optimizer": "adam",
+      "batch_size": 256
+    },
+    "model_b_hyperparameters": {
+      "activation": "relu",
+      "filters_1": 96,
+      "kernel_1": 2,
+      "spatial_dropout_1": 0.30000000000000004,
+      "filters_2": 48,
+      "kernel_2": 3,
+      "spatial_dropout_2": 0.4,
+      "dense_units": 160,
+      "dense_dropout": 0.30000000000000004,
+      "learning_rate": 0.001,
+      "optimizer": "rmsprop",
+      "batch_size": 256
+    }
+  },
+  "seed_records": [
+    {
+      "model": "Model A (Dense, tuned)",
+      "seed": 42,
+      "pr_auc_val": 0.21506840596875523,
+      "roc_auc": 0.6634567295445547,
+      "pr_auc": 0.21822061010874896,
+      "minority_f1": 0.27361275088547815,
+      "minority_precision": 0.20540660314646578,
+      "minority_recall": 0.4096332302253646,
+      "accuracy": 0.7522524789852519,
+      "threshold": 0.12204559892416,
+      "minority_f1_at_0.5": 0.003524229074889868
+    },
+    {
+      "model": "Model B (CNN, tuned)",
+      "seed": 42,
+      "pr_auc_val": 0.2077536665240012,
+      "roc_auc": 0.6597365239471243,
+      "pr_auc": 0.21278540952021974,
+      "minority_f1": 0.2784184514003295,
+      "minority_precision": 0.20195180242979485,
+      "minority_recall": 0.4480777728678745,
+      "accuracy": 0.7354406805254945,
+      "threshold": 0.13411088287830353,
+      "minority_f1_at_0.5": 0.0008818342151675485
+    },
+    {
+      "model": "Model A2 (Dense + embeddings)",
+      "seed": 42,
+      "pr_auc_val": 0.20779219913405325,
+      "roc_auc": 0.6632567564134733,
+      "pr_auc": 0.2116507631361321,
+      "minority_f1": 0.2716927453769559,
+      "minority_precision": 0.1856471731734975,
+      "minority_recall": 0.5064074237737517,
+      "accuracy": 0.690743443901948,
+      "threshold": 0.15716129541397095,
+      "minority_f1_at_0.5": 0.00873743993010048
+    },
+    {
+      "model": "Ensemble - soft voting",
+      "seed": 42,
+      "pr_auc_val": 0.21442729993612553,
+      "roc_auc": 0.6643585979485038,
+      "pr_auc": 0.21825926970684909,
+      "minority_f1": 0.2716734693877551,
+      "minority_precision": 0.2154324184360435,
+      "minority_recall": 0.36765355722492266,
+      "accuracy": 0.7754567876377914,
+      "threshold": 0.1380663961172104,
+      "minority_f1_at_0.5": 0.00176444640494045
+    },
+    {
+      "model": "Ensemble - weighted average",
+      "seed": 42,
+      "pr_auc_val": 0.21573504366240348,
+      "roc_auc": 0.6644883614708945,
+      "pr_auc": 0.2188660776489083,
+      "minority_f1": 0.27377911344853495,
+      "minority_precision": 0.20742258652094717,
+      "minority_recall": 0.40256296950950066,
+      "accuracy": 0.756732269592792,
+      "threshold": 0.12645263969898224,
+      "minority_f1_at_0.5": 0.001763668430335097,
+      "weight_on_model_a": 0.8
+    },
+    {
+      "model": "Ensemble - stacked meta-learner",
+      "seed": 42,
+      "pr_auc_val": 0.21460085863028872,
+      "roc_auc": 0.6644517756630052,
+      "pr_auc": 0.21837295731095976,
+      "minority_f1": 0.271421495789995,
+      "minority_precision": 0.21665788086452292,
+      "minority_recall": 0.36323464427750773,
+      "accuracy": 0.7778728544823074,
+      "threshold": 0.1315346509218216,
+      "minority_f1_at_0.5": 0.040695209834675714
+    },
+    {
+      "model": "Model A (Dense, tuned)",
+      "seed": 123,
+      "pr_auc_val": 0.21764481837258604,
+      "roc_auc": 0.6636963634485112,
+      "pr_auc": 0.21945869497243609,
+      "minority_f1": 0.27625141136620246,
+      "minority_precision": 0.19288717589348284,
+      "minority_recall": 0.48652231551038444,
+      "accuracy": 0.7096189661247294,
+      "threshold": 0.12045662850141525,
+      "minority_f1_at_0.5": 0.013146362839614373
+    },
+    {
+      "model": "Model B (CNN, tuned)",
+      "seed": 123,
+      "pr_auc_val": 0.20994317451496258,
+      "roc_auc": 0.6629773738804993,
+      "pr_auc": 0.21552069185499953,
+      "minority_f1": 0.27671232876712326,
+      "minority_precision": 0.20051618026603138,
+      "minority_recall": 0.44631020768890856,
+      "accuracy": 0.7342326471032365,
+      "threshold": 0.14516031742095947,
+      "minority_f1_at_0.5": 0.010517090271691499
+    },
+    {
+      "model": "Model A2 (Dense + embeddings)",
+      "seed": 123,
+      "pr_auc_val": 0.20837254480352668,
+      "roc_auc": 0.6584080386663418,
+      "pr_auc": 0.21040969455149594,
+      "minority_f1": 0.2711969111969112,
+      "minority_precision": 0.20845204178537513,
+      "minority_recall": 0.3879805567830314,
+      "accuracy": 0.7624704283485176,
+      "threshold": 0.1747031807899475,
+      "minority_f1_at_0.5": 0.005279366476022877
+    },
+    {
+      "model": "Ensemble - soft voting",
+      "seed": 123,
+      "pr_auc_val": 0.21625036710520185,
+      "roc_auc": 0.6655948970341071,
+      "pr_auc": 0.22022588635873344,
+      "minority_f1": 0.27542057466130715,
+      "minority_precision": 0.20767849124382579,
+      "minority_recall": 0.40874944763588156,
+      "accuracy": 0.7550208889112598,
+      "threshold": 0.14221791923046112,
+      "minority_f1_at_0.5": 0.00878348704435661
+    },
+    {
+      "model": "Ensemble - weighted average",
+      "seed": 123,
+      "pr_auc_val": 0.21787801134479673,
+      "roc_auc": 0.6646101802878328,
+      "pr_auc": 0.21994547029802575,
+      "minority_f1": 0.27833053366067967,
+      "minority_precision": 0.1966764061358656,
+      "minority_recall": 0.4759169244365886,
+      "accuracy": 0.7188805556953742,
+      "threshold": 0.12416233867406845,
+      "minority_f1_at_0.5": 0.012275317843051293,
+      "weight_on_model_a": 0.9
+    },
+    {
+      "model": "Ensemble - stacked meta-learner",
+      "seed": 123,
+      "pr_auc_val": 0.21607873574008432,
+      "roc_auc": 0.6655725313704163,
+      "pr_auc": 0.22012820790293042,
+      "minority_f1": 0.275513240107111,
+      "minority_precision": 0.2076698811392689,
+      "minority_recall": 0.4091913389306231,
+      "accuracy": 0.7548698847334776,
+      "threshold": 0.12834416329860687,
+      "minority_f1_at_0.5": 0.03810330228619814
+    },
+    {
+      "model": "Model A (Dense, tuned)",
+      "seed": 2024,
+      "pr_auc_val": 0.21785631939781772,
+      "roc_auc": 0.6649071340492956,
+      "pr_auc": 0.21988331842079112,
+      "minority_f1": 0.2769888148799799,
+      "minority_precision": 0.19353705655075518,
+      "minority_recall": 0.4869642068051259,
+      "accuracy": 0.7104243217395682,
+      "threshold": 0.13186100125312805,
+      "minority_f1_at_0.5": 0.02677029360967185
+    },
+    {
+      "model": "Model B (CNN, tuned)",
+      "seed": 2024,
+      "pr_auc_val": 0.2122367062309202,
+      "roc_auc": 0.6640040482102298,
+      "pr_auc": 0.2177445011413543,
+      "minority_f1": 0.2807677832141513,
+      "minority_precision": 0.1960406447091801,
+      "minority_recall": 0.4944763588157313,
+      "accuracy": 0.7114310162581164,
+      "threshold": 0.1399753838777542,
+      "minority_f1_at_0.5": 0.005279366476022877
+    },
+    {
+      "model": "Model A2 (Dense + embeddings)",
+      "seed": 2024,
+      "pr_auc_val": 0.20925077898488928,
+      "roc_auc": 0.6614018747797948,
+      "pr_auc": 0.21619591784047412,
+      "minority_f1": 0.2729300941993059,
+      "minority_precision": 0.1896640826873385,
+      "minority_recall": 0.48652231551038444,
+      "accuracy": 0.70473649770977,
+      "threshold": 0.16846643388271332,
+      "minority_f1_at_0.5": 0.04787904241915162
+    },
+    {
+      "model": "Ensemble - soft voting",
+      "seed": 2024,
+      "pr_auc_val": 0.21760135994893198,
+      "roc_auc": 0.667124058295111,
+      "pr_auc": 0.2209926703801632,
+      "minority_f1": 0.2761255115961801,
+      "minority_precision": 0.1997237023880008,
+      "minority_recall": 0.4471939902783915,
+      "accuracy": 0.7329239442291237,
+      "threshold": 0.1422799825668335,
+      "minority_f1_at_0.5": 0.018332605848974247
+    },
+    {
+      "model": "Ensemble - weighted average",
+      "seed": 2024,
+      "pr_auc_val": 0.21845983103177818,
+      "roc_auc": 0.6668420902813736,
+      "pr_auc": 0.22099939912496683,
+      "minority_f1": 0.2744988864142539,
+      "minority_precision": 0.20036577931314772,
+      "minority_recall": 0.4357048166151127,
+      "accuracy": 0.737655408466301,
+      "threshold": 0.14175128936767578,
+      "minority_f1_at_0.5": 0.021691973969631236,
+      "weight_on_model_a": 0.75
+    },
+    {
+      "model": "Ensemble - stacked meta-learner",
+      "seed": 2024,
+      "pr_auc_val": 0.21762682411244294,
+      "roc_auc": 0.6671545945800492,
+      "pr_auc": 0.22106795894466677,
+      "minority_f1": 0.2758714596949891,
+      "minority_precision": 0.19937020271600078,
+      "minority_recall": 0.447635881573133,
+      "accuracy": 0.7323199275179947,
+      "threshold": 0.12116119265556335,
+      "minority_f1_at_0.5": 0.04382638010956595
+    },
+    {
+      "model": "Model A (Dense, tuned)",
+      "seed": 7,
+      "pr_auc_val": 0.21690694365257024,
+      "roc_auc": 0.6618384445024796,
+      "pr_auc": 0.21938822761469767,
+      "minority_f1": 0.2733769195681922,
+      "minority_precision": 0.20839128419100603,
+      "minority_recall": 0.3972602739726027,
+      "accuracy": 0.7594503447928727,
+      "threshold": 0.12786372005939484,
+      "minority_f1_at_0.5": 0.006151142355008787
+    },
+    {
+      "model": "Model B (CNN, tuned)",
+      "seed": 7,
+      "pr_auc_val": 0.2104573921268175,
+      "roc_auc": 0.6628381971999897,
+      "pr_auc": 0.21741145526082611,
+      "minority_f1": 0.2781633742658836,
+      "minority_precision": 0.199273283610633,
+      "minority_recall": 0.46045072912063634,
+      "accuracy": 0.7277898021845272,
+      "threshold": 0.14272856712341309,
+      "minority_f1_at_0.5": 0.0061592608886933565
+    },
+    {
+      "model": "Model A2 (Dense + embeddings)",
+      "seed": 7,
+      "pr_auc_val": 0.2093277374732611,
+      "roc_auc": 0.6627745391493497,
+      "pr_auc": 0.21114622347451725,
+      "minority_f1": 0.2731568998109641,
+      "minority_precision": 0.21223990208078336,
+      "minority_recall": 0.38311975254087494,
+      "accuracy": 0.7677555745708965,
+      "threshold": 0.16262328624725342,
+      "minority_f1_at_0.5": 0.0026455026455026454
+    },
+    {
+      "model": "Ensemble - soft voting",
+      "seed": 7,
+      "pr_auc_val": 0.21558225139675738,
+      "roc_auc": 0.6647823908779017,
+      "pr_auc": 0.22057207127826403,
+      "minority_f1": 0.2804162219850587,
+      "minority_precision": 0.20084081788648958,
+      "minority_recall": 0.4644277507733098,
+      "accuracy": 0.728494488347511,
+      "threshold": 0.12951284646987915,
+      "minority_f1_at_0.5": 0.00528169014084507
+    },
+    {
+      "model": "Ensemble - weighted average",
+      "seed": 7,
+      "pr_auc_val": 0.21712358952776942,
+      "roc_auc": 0.6635026406544208,
+      "pr_auc": 0.220059292617708,
+      "minority_f1": 0.2719797596457938,
+      "minority_precision": 0.21177049987687763,
+      "minority_recall": 0.3800265134776845,
+      "accuracy": 0.7682589218301706,
+      "threshold": 0.1348828226327896,
+      "minority_f1_at_0.5": 0.006156552330694811,
+      "weight_on_model_a": 0.8500000000000001
+    },
+    {
+      "model": "Ensemble - stacked meta-learner",
+      "seed": 7,
+      "pr_auc_val": 0.21550351454628314,
+      "roc_auc": 0.6647755757514235,
+      "pr_auc": 0.22056608162334912,
+      "minority_f1": 0.2804260985352863,
+      "minority_precision": 0.2006861063464837,
+      "minority_recall": 0.46531153336279274,
+      "accuracy": 0.7279911410882368,
+      "threshold": 0.11944691836833954,
+      "minority_f1_at_0.5": 0.037367303609341825
+    },
+    {
+      "model": "Model A (Dense, tuned)",
+      "seed": 31415,
+      "pr_auc_val": 0.21686780513582982,
+      "roc_auc": 0.665435714254875,
+      "pr_auc": 0.22152299676088552,
+      "minority_f1": 0.2753195673549656,
+      "minority_precision": 0.20181219110378912,
+      "minority_recall": 0.43305346884666374,
+      "accuracy": 0.740323148940454,
+      "threshold": 0.12188226729631424,
+      "minority_f1_at_0.5": 0.01225382932166302
+    },
+    {
+      "model": "Model B (CNN, tuned)",
+      "seed": 31415,
+      "pr_auc_val": 0.2119287920532904,
+      "roc_auc": 0.6639503932089511,
+      "pr_auc": 0.21597901225177785,
+      "minority_f1": 0.2763946212222074,
+      "minority_precision": 0.19778963414634146,
+      "minority_recall": 0.45868316394167036,
+      "accuracy": 0.7264307645844869,
+      "threshold": 0.13516849279403687,
+      "minority_f1_at_0.5": 0.0035226772346983706
+    },
+    {
+      "model": "Model A2 (Dense + embeddings)",
+      "seed": 31415,
+      "pr_auc_val": 0.20898175503130578,
+      "roc_auc": 0.6617998756559464,
+      "pr_auc": 0.21482038180840776,
+      "minority_f1": 0.2781289506953224,
+      "minority_precision": 0.19479369576766425,
+      "minority_recall": 0.48608042421564296,
+      "accuracy": 0.7125887149544471,
+      "threshold": 0.1521483212709427,
+      "minority_f1_at_0.5": 0.005272407732864675
+    },
+    {
+      "model": "Ensemble - soft voting",
+      "seed": 31415,
+      "pr_auc_val": 0.21664957304492888,
+      "roc_auc": 0.6671963136968329,
+      "pr_auc": 0.22107016569119853,
+      "minority_f1": 0.2800762112139358,
+      "minority_precision": 0.20235988200589972,
+      "minority_recall": 0.4547061422889969,
+      "accuracy": 0.7337292998439624,
+      "threshold": 0.12743788957595825,
+      "minority_f1_at_0.5": 0.007032967032967033
+    },
+    {
+      "model": "Ensemble - weighted average",
+      "seed": 31415,
+      "pr_auc_val": 0.21745917062646875,
+      "roc_auc": 0.6669340129081257,
+      "pr_auc": 0.22204206009413574,
+      "minority_f1": 0.2771051183269125,
+      "minority_precision": 0.2011988011988012,
+      "minority_recall": 0.44498453380468406,
+      "accuracy": 0.7355413499773493,
+      "threshold": 0.1230422705411911,
+      "minority_f1_at_0.5": 0.009640666082383873,
+      "weight_on_model_a": 0.8
+    },
+    {
+      "model": "Ensemble - stacked meta-learner",
+      "seed": 31415,
+      "pr_auc_val": 0.21663022690463823,
+      "roc_auc": 0.6671872770650384,
+      "pr_auc": 0.221096094859967,
+      "minority_f1": 0.2798309014046093,
+      "minority_precision": 0.20236686390532543,
+      "minority_recall": 0.4533804684047724,
+      "accuracy": 0.7341823123773091,
+      "threshold": 0.12057037651538849,
+      "minority_f1_at_0.5": 0.04393747359526827
+    }
+  ],
+  "ci_table": [
+    {
+      "model": "Model A (Dense, tuned)",
+      "n_seeds": 5,
+      "roc_auc_mean": 0.6638668771599432,
+      "roc_auc_ci95": 0.0017400160305681197,
+      "pr_auc_mean": 0.21969476957551187,
+      "pr_auc_ci95": 0.0014823214765454047,
+      "minority_f1_mean": 0.27510989281096365,
+      "minority_f1_ci95": 0.001975183261554408
+    },
+    {
+      "model": "Model B (CNN, tuned)",
+      "n_seeds": 5,
+      "roc_auc_mean": 0.6627013072893588,
+      "roc_auc_ci95": 0.0021633337468809494,
+      "pr_auc_mean": 0.21588821400583552,
+      "pr_auc_ci95": 0.002447116125172357,
+      "minority_f1_mean": 0.27809131177393903,
+      "minority_f1_ci95": 0.0021556432861852435
+    },
+    {
+      "model": "Model A2 (Dense + embeddings)",
+      "n_seeds": 5,
+      "roc_auc_mean": 0.6615282169329813,
+      "roc_auc_ci95": 0.002353145007561048,
+      "pr_auc_mean": 0.2128445961622054,
+      "pr_auc_ci95": 0.003127264498014514,
+      "minority_f1_mean": 0.27342112025589194,
+      "minority_f1_ci95": 0.003423536509850444
+    },
+    {
+      "model": "Ensemble - soft voting",
+      "n_seeds": 5,
+      "roc_auc_mean": 0.6658112515704913,
+      "roc_auc_ci95": 0.0016257532037262789,
+      "pr_auc_mean": 0.22022401268304165,
+      "pr_auc_ci95": 0.0014276669750706381,
+      "minority_f1_mean": 0.2767423977688474,
+      "minority_f1_ci95": 0.004495488029054624
+    },
+    {
+      "model": "Ensemble - weighted average",
+      "n_seeds": 5,
+      "roc_auc_mean": 0.6652754571205295,
+      "roc_auc_ci95": 0.001904461007316153,
+      "pr_auc_mean": 0.22038245995674893,
+      "pr_auc_ci95": 0.0014860724918874994,
+      "minority_f1_mean": 0.27513868229923494,
+      "minority_f1_ci95": 0.0031833214076538645
+    },
+    {
+      "model": "Ensemble - stacked meta-learner",
+      "n_seeds": 5,
+      "roc_auc_mean": 0.6658283508859866,
+      "roc_auc_ci95": 0.0016039037174088609,
+      "pr_auc_mean": 0.22024626012837462,
+      "pr_auc_ci95": 0.001391397061089283,
+      "minority_f1_mean": 0.2766126391063981,
+      "minority_f1_ci95": 0.004545477310461377
+    },
+    {
+      "model": "Logistic Regression (deterministic)",
+      "n_seeds": 1,
+      "roc_auc_mean": 0.655402530236821,
+      "roc_auc_ci95": 0.0,
+      "pr_auc_mean": 0.21408482032660742,
+      "pr_auc_ci95": 0.0,
+      "minority_f1_mean": 0.2709825264967058,
+      "minority_f1_ci95": 0.0
+    }
+  ],
+  "wilcoxon_results": [
+    {
+      "comparison": "Ensemble - weighted average vs Model A (Dense, tuned)",
+      "metric": "pr_auc",
+      "n_pairs": 5,
+      "mean_diff": 0.000687690381237055,
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.0625,
+      "cohend_paired": 2.7269802480365577
+    },
+    {
+      "comparison": "Ensemble - weighted average vs Model A (Dense, tuned)",
+      "metric": "minority_f1",
+      "n_pairs": 5,
+      "mean_diff": 2.8789488271296904e-05,
+      "wilcoxon_stat": 7.0,
+      "p_value": 1.0,
+      "cohend_paired": 0.01453797930924121
+    },
+    {
+      "comparison": "Model A (Dense, tuned) vs Model B (CNN, tuned)",
+      "metric": "roc_auc",
+      "n_pairs": 5,
+      "mean_diff": 0.001165569870584382,
+      "wilcoxon_stat": 3.0,
+      "p_value": 0.3125,
+      "cohend_paired": 0.6848785678094985
+    },
+    {
+      "comparison": "Model A (Dense, tuned) vs Model B (CNN, tuned)",
+      "metric": "pr_auc",
+      "n_pairs": 5,
+      "mean_diff": 0.0038065555696763674,
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.0625,
+      "cohend_paired": 2.21458514292124
+    }
+  ],
+  "deep_vs_logistic_regression": [
+    {
+      "model": "Model A (Dense, tuned)",
+      "metric": "pr_auc",
+      "deterministic_value": 0.21408482032660742,
+      "seed_mean": 0.21969476957551187,
+      "seed_min": 0.21822061010874896,
+      "seed_max": 0.22152299676088552,
+      "n_seeds_beating_deterministic": 5,
+      "position": "below every seed"
+    },
+    {
+      "model": "Model B (CNN, tuned)",
+      "metric": "pr_auc",
+      "deterministic_value": 0.21408482032660742,
+      "seed_mean": 0.21588821400583552,
+      "seed_min": 0.21278540952021974,
+      "seed_max": 0.2177445011413543,
+      "n_seeds_beating_deterministic": 4,
+      "position": "within the 5-seed range"
+    },
+    {
+      "model": "Model A2 (Dense + embeddings)",
+      "metric": "pr_auc",
+      "deterministic_value": 0.21408482032660742,
+      "seed_mean": 0.2128445961622054,
+      "seed_min": 0.21040969455149594,
+      "seed_max": 0.21619591784047412,
+      "n_seeds_beating_deterministic": 2,
+      "position": "within the 5-seed range"
+    }
+  ],
+  "logistic_regression": {
+    "metrics_tuned": {
+      "roc_auc": 0.655402530236821,
+      "pr_auc": 0.21408482032660742,
+      "minority_f1": 0.2709825264967058,
+      "minority_precision": 0.20046620046620048,
+      "minority_recall": 0.41802916482545294,
+      "accuracy": 0.7437962450294459,
+      "threshold": 0.1310107707977295
+    },
+    "metrics_0.5": {
+      "roc_auc": 0.655402530236821,
+      "pr_auc": 0.21408482032660742,
+      "minority_f1": 0.027515047291487533,
+      "minority_precision": 0.5079365079365079,
+      "minority_recall": 0.014140521431727796,
+      "accuracy": 0.8861428499521821,
+      "threshold": 0.5
+    },
+    "threshold": 0.1310107707977295
+  },
+  "ensemble_premise_test": {
+    "pearson_r": 0.9341830015182495,
+    "pearson_p": 0.0,
+    "spearman_rho": 0.907712915043153,
+    "spearman_p": 0.0,
+    "disagreement_rate": 0.08073690038757739,
+    "both_correct": 13976,
+    "both_wrong": 4287,
+    "only_a_correct": 969,
+    "only_b_correct": 635
+  },
+  "ensemble_weighted_average_weight_by_seed": {
+    "42": 0.8,
+    "123": 0.9,
+    "2024": 0.75,
+    "7": 0.8500000000000001,
+    "31415": 0.8
+  },
+  "interpretability": {
+    "method": "DeepExplainer",
+    "model_explained": "Model A (Dense, tuned)",
+    "n_background": 100,
+    "n_explained": 750,
+    "top_10_features": [
+      [
+        "number_inpatient",
+        0.02846448622364551
+      ],
+      [
+        "discharge_disposition_Discharged to home",
+        0.013631042921294769
+      ],
+      [
+        "number_emergency",
+        0.005903757299451778
+      ],
+      [
+        "discharge_disposition_Discharged/transferred to another rehab fac including rehab units of a hospital .",
+        0.005562761459810038
+      ],
+      [
+        "diabetesMed_No",
+        0.004801423060707748
+      ],
+      [
+        "number_diagnoses",
+        0.0035789268583321246
+      ],
+      [
+        "age",
+        0.002988412781470136
+      ],
+      [
+        "discharge_disposition_Discharged/transferred to home with home health service",
+        0.0026473253996421894
+      ],
+      [
+        "diag_1_category_Circulatory",
+        0.0024890894251681553
+      ],
+      [
+        "time_in_hospital",
+        0.0024706674696329477
+      ]
+    ]
+  },
+  "threshold_analysis": {
+    "model": "Model A (Dense, tuned)",
+    "selected_threshold": 0.12204559892416,
+    "metrics_0.5": {
+      "roc_auc": 0.6634567295445547,
+      "pr_auc": 0.21822061010874896,
+      "minority_f1": 0.003524229074889868,
+      "minority_precision": 0.5714285714285714,
+      "minority_recall": 0.0017675651789659744,
+      "accuracy": 0.8861428499521821,
+      "threshold": 0.5
+    },
+    "metrics_tuned": {
+      "roc_auc": 0.6634567295445547,
+      "pr_auc": 0.21822061010874896,
+      "minority_f1": 0.27361275088547815,
+      "minority_precision": 0.20540660314646578,
+      "minority_recall": 0.4096332302253646,
+      "accuracy": 0.7522524789852519,
+      "threshold": 0.12204559892416
+    }
+  },
+  "model_selection": {
+    "criterion": "mean VALIDATION PR-AUC across seeds (primary); minority-F1 at tuned threshold (secondary). Test-set metrics are reported, never ranked on.",
+    "best_overall": "Ensemble - weighted average",
+    "runner_up": "Model A (Dense, tuned)",
+    "pr_auc_gap_vs_runner_up": 0.0004622707331315423,
+    "best_individual": "Model A (Dense, tuned)",
+    "best_ensemble": "Ensemble - weighted average"
+  }
+}

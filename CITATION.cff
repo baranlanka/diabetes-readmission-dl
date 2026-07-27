@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: >-
+  Predicting 30-Day Hospital Readmission in Diabetic Inpatients with
+  Deep Neural Networks
+message: If you use this work, please cite it using these metadata.
+type: software
+authors:
+  - name: baranlanka
+    email: dilidonka@gmail.com
+abstract: >-
+  An end-to-end deep-learning study on the UCI Diabetes 130-US-Hospitals
+  benchmark (101,766 encounters). A Dense DNN, a 1D-CNN, and a diagnosis-
+  embedding variant are built, tuned, ensembled, and interpreted under a
+  patient-grouped evaluation protocol, with a logistic-regression control.
+  The best model reaches ROC-AUC 0.665. The study emphasises honest
+  evaluation over headline scores, showing the published 0.48-0.974 AUROC
+  spread on this dataset is largely a methodological artefact.
+keywords:
+  - deep-learning
+  - convolutional-neural-network
+  - healthcare
+  - hospital-readmission
+  - class-imbalance
+  - reproducibility
+  - tabular-data
+license: MIT
