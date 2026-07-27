@@ -4,7 +4,7 @@
 
 **Predicting 30-day hospital readmission with deep learning — and being honest about how well it actually works.**
 
-[Read the paper](reports/paper.md) · [Notebooks](notebooks/) · [🔬 spin-off tool: leakage-lens](https://github.com/baranlanka/leakage-lens)
+[Read the paper](reports/paper.md) · [PDF](reports/paper.pdf) · [Notebooks](notebooks/) · [🔬 spin-off tool: leakage-lens](https://github.com/baranlanka/leakage-lens)
 
 ![Python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-blue)

@@ -14,3 +14,6 @@ __pycache__/
 artifacts/*.npy
 artifacts/tuning/
 artifacts/*.html
+
+# built paper HTML intermediate (the .pdf is committed)
+reports/*.html
