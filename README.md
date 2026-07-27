@@ -21,7 +21,7 @@ An end-to-end deep-learning study on the **UCI Diabetes 130-US-Hospitals** bench
 
 The goal was **a result that can be shown to be sound, not a headline figure.** The published literature on this dataset disagrees with itself — reported ROC-AUC spans **0.48 to 0.974** on identical data — and [the paper](reports/paper.md) shows most of that spread is a measurement artefact. Every number here was produced under a **patient-grouped split** with all resampling and fitted transforms confined to the training partition.
 
-> 🔬 The methodology finding at the heart of this project — that resampling *before* the train/test split inflates AUROC, and by how much — was extracted and generalized into a standalone, installable tool: **[leakage-lens](https://github.com/baranlanka/leakage-lens)**.
+> 🔬 The methodology finding at the heart of this project — that resampling *before* the train/test split inflates AUROC, and by how much — was extracted and generalized into a standalone, installable, **unit-tested** tool (GitHub Actions CI + one-command `make reproduce`): **[leakage-lens](https://github.com/baranlanka/leakage-lens)**. This repo is the applied study (the notebooks); the reusable, tested harness lives there.
 
 ## What makes this more than a leaderboard chase
 
