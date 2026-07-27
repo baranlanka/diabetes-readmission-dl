@@ -2,7 +2,7 @@
 
 ### Deep neural networks on the Diabetes 130-US-Hospitals benchmark, under an honest evaluation protocol
 
-**baranlanka** · 2026 · [github.com/baranlanka/diabetes-readmission-dl](https://github.com/baranlanka/diabetes-readmission-dl)
+**Ivans Novikovs** · 2026 · [github.com/baranlanka/diabetes-readmission-dl](https://github.com/baranlanka/diabetes-readmission-dl)
 
 ---
 

@@ -5,8 +5,9 @@ title: >-
 message: If you use this work, please cite it using these metadata.
 type: software
 authors:
-  - name: baranlanka
-    email: dilidonka@gmail.com
+  - given-names: Ivans
+    family-names: Novikovs
+    email: ivan@novikov.lv
 abstract: >-
   An end-to-end deep-learning study on the UCI Diabetes 130-US-Hospitals
   benchmark (101,766 encounters). A Dense DNN, a 1D-CNN, and a diagnosis-
